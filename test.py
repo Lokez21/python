@@ -7,7 +7,7 @@
 # 	if year%400==0:
 # 		print(f'{year} is a leap year')
 # 	elif year%100==0:
-# 		print(f'{year} is not a leap year') 
+# 		print(f'{year} is not a leap year')
 # 	else:
 # 		print(f'{year} is a leap year')
 # else:
@@ -29,7 +29,7 @@
 #    print("{0} is not a leap year".format(year))
 
 
-# Mapping decode: 
+# Mapping decode:
 
 # dic = {'a':1, 'b':2, 'c':3, 'd':4, 'e':5, 'f':6, 'g':7, 'h':8, 'i':9, 'j':10, 'k':11, 'l':12, 'm':13, 'n':14, 'o':15, 'p':16, 'q':17, 'r':18, 's':19, 't':20, 'u':21, 'v':22, 'w':23, 'x':24, 'y':25, 'z':26}
 
@@ -48,7 +48,7 @@
 # 				print(k, end=' ', flush=True)
 # 	print()
 
-# 	for	
+# 	for
 
 # num_ways(data1)
 
@@ -152,7 +152,7 @@
 # for i in range(5):
 # 	print(deck[i][0], "of",  deck[i][1])
 
-# calendar: 
+# calendar:
 
 # import calendar
 
@@ -176,7 +176,7 @@
 
 
 
-# add 2 matrices 
+# add 2 matrices
 
 # a= [[1,2,3],
 # 	[4,5,6],
@@ -214,7 +214,7 @@
 # print(rev_str)
 
 
-# python to remove punctuations: 
+# python to remove punctuations:
 
 # string = "Hello, World.!!"
 
@@ -261,19 +261,19 @@
 
 
 # count the no. of Vowel:
-vowels = 'aeiou'
-
-string = "I scored a century again. I am awesome. Leading run scorer of the season. yaay!!"
-
-string = string.casefold()
-
-count = {}.fromkeys(vowels,0)
-
-for char in string:
-	if char in vowels:
-		count[char] += 1
-
-print(count)
+# vowels = 'aeiou'
+#
+# string = "I scored a century again. I am awesome. Leading run scorer of the season. yaay!!"
+#
+# string = string.casefold()
+#
+# count = {}.fromkeys(vowels,0)
+#
+# for char in string:
+# 	if char in vowels:
+# 		count[char] += 1
+#
+# print(count)
 
 
 # count the no. of Vowel:
@@ -544,55 +544,162 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 # Solution 2:
 
-def pair10(list):
-    dict = {}
+# def pair10(list):
+#     dict = {}
+#
+#     for item in list:
+#         if (10-item) in dict:
+#             print(f'{10-item}, {item}')
+#             return
+#         else:
+#             dict[item]=1
+#
+#     print('There is no pair that adds up to 10.')
+#
+#
+# print(pair10([1, 1, 1, 2, 3, 4, 5]))
 
-    for item in list:
-        if (10-item) in dict:
-            print(f'{10-item}, {item}')
-            return
+# #### Inheritance:
+
+# class BasicOperations:
+# 	def __init__(self, n1, n2):
+# 		self.n1 = n1
+# 		self.n2 = n2
+#
+# 	def add(self):
+# 		return(self.n1+self.n2)
+#
+# 	def sub(self):
+# 		return self.n1 - self.n2
+#
+# # object = BasicOperations(2,4)
+# # print(object.sub())
+#
+# class FullBasicOperations(BasicOperations):
+# 	def __init__(self, n1, n2):
+# 	# 	self.n1 = n1
+# 	# 	self.n2 = n2
+# 		super().__init__(n1, n2)
+#
+# 	def mul(self):
+# 		return self.n1 * self.n2
+#
+# 	def div(self):
+# 		return self.n1 / self.n2
+#
+# object = FullBasicOperations(2,4)
+# print(object.add())
+
+# import sys
+#
+# n=10
+#
+# data = []
+#
+# for i in range(n):
+# 	a = len(data)
+#
+# 	b = sys.getsizeof(data)
+#
+# 	print('Length: {0:2d}; Size in Bytes: {1:4d}'.format(a,b))
+# 	data.append(n)
+
+
+# import ctypes
+# import sys
+#
+# class DynamicArray(object):
+#     '''
+#     DYNAMIC ARRAY CLASS (Similar to Python List)
+#     '''
+#
+#     def __init__(self):
+#         self.n = 0 # Count actual elements (Default is 0)
+#         self.capacity = 1 # Default Capacity
+#         self.A = self.make_array(self.capacity)
+#
+#     def __len__(self):
+#         """
+#         Return number of elements sorted in array
+#         """
+#         return self.n
+#
+#     def __getitem__(self,k):
+#         """
+#         Return element at index k
+#         """
+#         if not 0 <= k <self.n:
+#             return IndexError('K is out of bounds!') # Check it k index is in bounds of array
+#
+#         return self.A[k] #Retrieve from array at index k
+#
+#     def append(self, ele):
+#         """
+#         Add element to end of the array
+#         """
+#         if self.n == self.capacity:
+#             self._resize(2*self.capacity) #Double capacity if not enough room
+#
+#         self.A[self.n] = ele #Set self.n index to element
+#         self.n += 1
+#
+#     def _resize(self,new_cap):
+#         """
+#         Resize internal array to capacity new_cap
+#         """
+#
+#         B = self.make_array(new_cap) # New bigger array
+#
+#         for k in range(self.n): # Reference all existing values
+#             B[k] = self.A[k]
+#
+#         self.A = B # Call A the new bigger array
+#         self.capacity = new_cap # Reset the capacity
+#
+#     def make_array(self,new_cap):
+#         """
+#         Returns a new array with new_cap capacity
+#         """
+#         return (new_cap * ctypes.py_object)()
+#
+#
+# A = DynamicArray()
+#
+# A.append('1')
+# print(f'{len(A)}: {sys.getsizeof(A)}')
+#
+# for i in range(10):
+#     A.append(i)
+#
+# print(f'{len(A)}: {sys.getsizeof(A)}')
+
+
+# Anagram:
+a = "god"
+b = "dog"
+
+
+A = list(a.lower().strip(' '))
+B = list(b.lower().strip(' '))
+
+
+len_a = len(A)
+len_b = len(B)
+
+if len_a == len_b:
+    for i in A:
+        counter = 0
+        for j in B:
+            if i==j:
+                B.remove(j)
+                break
+            counter += 1
+        if counter == len(B):
+            print('Strings are not Anagram. A char mismatch occurred.')
+            break
         else:
-            dict[item]=1
-
-    print('There is no pair that adds up to 10.')
+            print('All checked. Strings are Anagram')
 
 
-print(pair10([1, 1, 1, 2, 3, 4, 5]))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+else:
+    print("Not anagram - diff lengths")
