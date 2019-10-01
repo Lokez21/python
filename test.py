@@ -675,31 +675,109 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 
 # Anagram:
-a = "god"
-b = "dog"
+#
+# def IsAnagram(a,b):
+#     A = list(a.lower().replace(' ', ''))
+#     B = list(b.lower().replace(' ', ''))
+#     # print(A)
+#
+#     len_a = len(A)
+#     len_b = len(B)
+#
+#     dict={}
+#
+#     if len_a == len_b:
+#
+#         for letter in A:
+#             if letter not in dict:
+#                 dict[letter]=1
+#             else:
+#                 dict[letter]+=1
+#         # print(dict)
+#
+#         for letter in B:
+#             if letter not in dict:
+#                 dict[letter]=1
+#             else:
+#                 dict[letter]-=1
+#         # print(dict)
+#
+#         for k in dict:
+#             if dict[k] != 0:
+#                 return False
+#
+#         return True
+#     else:
+#         return False
+#
+# print(IsAnagram(a = "priya", b = "i pyar"))
+
+# IsAnagram = True
+# passs = 0
+# if len_a == len_b:
+#     for i in A:
+#         counter = 0
+#         for j in B:
+#             if i==j:
+#                 B.remove(j)
+#                 passs += 1
+#                 break
+#             counter += 1
+#             if counter == len(B):
+#                 print('Strings are not Anagram. A char mismatch occurred.')
+#                 break
+#
+#     if passs == len(A):
+#         print('All checked. Strings are Anagram')
+#
+#
+# else:
+#     print("Not anagram - diff lengths")
+
+# passs = 0
+#
+# if len_a == len_b:
+#     for i in A:
+#         if i not in B:
+#             print("not Anagram")
+#             break
+#
+#         else:
+#             B.remove(i)
+#
+#     if len(B)==0:
+#         print('Anagram')
+#
+# else:
+#     print('Not Anagram - diff lengths')
 
 
-A = list(a.lower().strip(' '))
-B = list(b.lower().strip(' '))
+# Flames:
 
+flames_dict = {'F':'Flower', 'L': 'Lover', 'A': 'Affection', 'M':'Marriage', 'E': 'Enemy', 'S': 'Sister'  }
+flames_list = ['f','l','a','m','e','s']
 
-len_a = len(A)
-len_b = len(B)
+dict = {}
+man = 'Lokesh'
+woman = 'Priya'
 
-if len_a == len_b:
-    for i in A:
-        counter = 0
-        for j in B:
-            if i==j:
-                B.remove(j)
-                break
-            counter += 1
-        if counter == len(B):
-            print('Strings are not Anagram. A char mismatch occurred.')
-            break
-        else:
-            print('All checked. Strings are Anagram')
+man = list(man.lower().replace(' ', ''))
+woman = list(woman.lower().replace(' ', ''))
 
+for letter in man:
+    if letter not in dict:
+        dict[letter]=1
+    else:
+        dict[letter]+=1
+# print(dict)
 
-else:
-    print("Not anagram - diff lengths")
+for letter in woman:
+    if letter not in dict:
+        dict[letter]=1
+    else:
+        dict[letter]-=1
+        # print(dict)
+
+print(len(dict))
+
+print(flames_list)
