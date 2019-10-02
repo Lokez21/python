@@ -727,5 +727,29 @@ What is the smallest positive number that is evenly divisible by all of the numb
 # print(pair_sum_check([1,9,2,8,3,7,4,6,5,5,13,14,11,13,-1],10))
 
 
+# missing element:
 def missing_element(A, B):
-    
+    missing = []
+    for i in A:
+        if i in B:
+            B.remove(i)
+        else:
+            missing.append(i)
+
+    for i in missing:
+        print(i)
+
+def missing_element2(A, B):
+    A = sorted(A)
+    B = sorted(B)
+
+    for i,j in zip(A,B):
+        if i!=j:
+            return i
+
+
+
+arr1 = [1,2,3,4,5,6,7]
+arr2 = [3,7,2,1,4,6]
+
+print(missing_element2(arr1,arr2))
