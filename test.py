@@ -675,31 +675,57 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 
 # Anagram:
-a = "god"
-b = "dog"
+# a = "god"
+# b = "dog"
+#
+#
+# A = list(a.lower().strip(' '))
+# B = list(b.lower().strip(' '))
+#
+#
+# len_a = len(A)
+# len_b = len(B)
+#
+# if len_a == len_b:
+#     for i in A:
+#         counter = 0
+#         for j in B:
+#             if i==j:
+#                 B.remove(j)
+#                 break
+#             counter += 1
+#         if counter == len(B):
+#             print('Strings are not Anagram. A char mismatch occurred.')
+#             break
+#         else:
+#             print('All checked. Strings are Anagram')
+#
+#
+# else:
+#     print("Not anagram - diff lengths")
 
 
-A = list(a.lower().strip(' '))
-B = list(b.lower().strip(' '))
+
+# Array pair sum:
+# def pair_sum_check(L,V):
+#
+#     # Sets for tracking
+#     seen = set()
+#     output = set()
+#
+#     for i in L:
+#
+#         target = V-i
+#
+#         if target in L:
+#             if i not in seen:
+#                 seen.add(i)
+#                 seen.add(target)
+#                 output.add((i,target))
+#     return output
+#
+# print(pair_sum_check([1,9,2,8,3,7,4,6,5,5,13,14,11,13,-1],10))
 
 
-len_a = len(A)
-len_b = len(B)
-
-if len_a == len_b:
-    for i in A:
-        counter = 0
-        for j in B:
-            if i==j:
-                B.remove(j)
-                break
-            counter += 1
-        if counter == len(B):
-            print('Strings are not Anagram. A char mismatch occurred.')
-            break
-        else:
-            print('All checked. Strings are Anagram')
-
-
-else:
-    print("Not anagram - diff lengths")
+def missing_element(A, B):
+    
