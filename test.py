@@ -675,47 +675,6 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 
 # Anagram:
-<<<<<<< HEAD
-#
-# def IsAnagram(a,b):
-#     A = list(a.lower().replace(' ', ''))
-#     B = list(b.lower().replace(' ', ''))
-#     # print(A)
-#
-#     len_a = len(A)
-#     len_b = len(B)
-#
-#     dict={}
-#
-#     if len_a == len_b:
-#
-#         for letter in A:
-#             if letter not in dict:
-#                 dict[letter]=1
-#             else:
-#                 dict[letter]+=1
-#         # print(dict)
-#
-#         for letter in B:
-#             if letter not in dict:
-#                 dict[letter]=1
-#             else:
-#                 dict[letter]-=1
-#         # print(dict)
-#
-#         for k in dict:
-#             if dict[k] != 0:
-#                 return False
-#
-#         return True
-#     else:
-#         return False
-#
-# print(IsAnagram(a = "priya", b = "i pyar"))
-
-# IsAnagram = True
-# passs = 0
-=======
 # a = "god"
 # b = "dog"
 #
@@ -727,48 +686,12 @@ What is the smallest positive number that is evenly divisible by all of the numb
 # len_a = len(A)
 # len_b = len(B)
 #
->>>>>>> cddca80a059c3260764f5cdf319286d689103712
 # if len_a == len_b:
 #     for i in A:
 #         counter = 0
 #         for j in B:
 #             if i==j:
 #                 B.remove(j)
-<<<<<<< HEAD
-#                 passs += 1
-#                 break
-#             counter += 1
-#             if counter == len(B):
-#                 print('Strings are not Anagram. A char mismatch occurred.')
-#                 break
-#
-#     if passs == len(A):
-#         print('All checked. Strings are Anagram')
-#
-#
-# else:
-#     print("Not anagram - diff lengths")
-
-# passs = 0
-#
-# if len_a == len_b:
-#     for i in A:
-#         if i not in B:
-#             print("not Anagram")
-#             break
-#
-#         else:
-#             B.remove(i)
-#
-#     if len(B)==0:
-#         print('Anagram')
-#
-# else:
-#     print('Not Anagram - diff lengths')
-
-
-# Flames:
-=======
 #                 break
 #             counter += 1
 #         if counter == len(B):
@@ -780,37 +703,36 @@ What is the smallest positive number that is evenly divisible by all of the numb
 #
 # else:
 #     print("Not anagram - diff lengths")
->>>>>>> cddca80a059c3260764f5cdf319286d689103712
 
-flames_dict = {'F':'Flower', 'L': 'Lover', 'A': 'Affection', 'M':'Marriage', 'E': 'Enemy', 'S': 'Sister'  }
-flames_list = ['f','l','a','m','e','s']
+# Flames:
 
-<<<<<<< HEAD
-dict = {}
-man = 'Lokesh'
-woman = 'Priya'
-
-man = list(man.lower().replace(' ', ''))
-woman = list(woman.lower().replace(' ', ''))
-
-for letter in man:
-    if letter not in dict:
-        dict[letter]=1
-    else:
-        dict[letter]+=1
-# print(dict)
-
-for letter in woman:
-    if letter not in dict:
-        dict[letter]=1
-    else:
-        dict[letter]-=1
-        # print(dict)
-
-print(len(dict))
-
-print(flames_list)
-=======
+# flames_dict = {'F':'Flower', 'L': 'Lover', 'A': 'Affection', 'M':'Marriage', 'E': 'Enemy', 'S': 'Sister'  }
+# flames_list = ['f','l','a','m','e','s']
+#
+# dict = {}
+# man = 'Lokesh'
+# woman = 'Priya'
+#
+# man = list(man.lower().replace(' ', ''))
+# woman = list(woman.lower().replace(' ', ''))
+#
+# for letter in man:
+#     if letter not in dict:
+#         dict[letter]=1
+#     else:
+#         dict[letter]+=1
+# # print(dict)
+#
+# for letter in woman:
+#     if letter not in dict:
+#         dict[letter]=1
+#     else:
+#         dict[letter]-=1
+#         # print(dict)
+#
+# print(len(dict))
+#
+# print(flames_list)
 
 # Array pair sum:
 # def pair_sum_check(L,V):
@@ -834,29 +756,48 @@ print(flames_list)
 
 
 # missing element:
-def missing_element(A, B):
-    missing = []
-    for i in A:
-        if i in B:
-            B.remove(i)
-        else:
-            missing.append(i)
+# def missing_element(A, B):
+#     missing = []
+#     for i in A:
+#         if i in B:
+#             B.remove(i)
+#         else:
+#             missing.append(i)
+#
+#     for i in missing:
+#         print(i)
+#
+# def missing_element2(A, B):
+#     A = sorted(A)
+#     B = sorted(B)
+#
+#     for i,j in zip(A,B):
+#         if i!=j:
+#             return i
+#
+# def missing_element3(arr1,arr2):
+#     arr1 = sorted(arr1)
+#     arr2 = sorted(arr2)
+#
+#     dict = {}
+#
+#     for i in arr1:
+#         if i not in dict:
+#             dict[i]=1
+#         else:
+#             dict[i]+=1
+#
+#     for j in arr2:
+#         if j in dict:
+#             dict[j]-=1
+#
+#     for k,v in dict.items():
+#         if dict[k]!=0:
+#             print(k)
 
-    for i in missing:
-        print(i)
+# arr1 = [1,3,2,4,5,6,7]
+# arr2 = [3,7,2,1,4,6]
+#
+# print(missing_element3(arr1,arr2))
 
-def missing_element2(A, B):
-    A = sorted(A)
-    B = sorted(B)
-
-    for i,j in zip(A,B):
-        if i!=j:
-            return i
-
-
-
-arr1 = [1,2,3,4,5,6,7]
-arr2 = [3,7,2,1,4,6]
-
-print(missing_element2(arr1,arr2))
->>>>>>> cddca80a059c3260764f5cdf319286d689103712
+new
