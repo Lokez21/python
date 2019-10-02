@@ -675,6 +675,7 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 
 # Anagram:
+<<<<<<< HEAD
 #
 # def IsAnagram(a,b):
 #     A = list(a.lower().replace(' ', ''))
@@ -714,12 +715,26 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 # IsAnagram = True
 # passs = 0
+=======
+# a = "god"
+# b = "dog"
+#
+#
+# A = list(a.lower().strip(' '))
+# B = list(b.lower().strip(' '))
+#
+#
+# len_a = len(A)
+# len_b = len(B)
+#
+>>>>>>> cddca80a059c3260764f5cdf319286d689103712
 # if len_a == len_b:
 #     for i in A:
 #         counter = 0
 #         for j in B:
 #             if i==j:
 #                 B.remove(j)
+<<<<<<< HEAD
 #                 passs += 1
 #                 break
 #             counter += 1
@@ -753,10 +768,24 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 
 # Flames:
+=======
+#                 break
+#             counter += 1
+#         if counter == len(B):
+#             print('Strings are not Anagram. A char mismatch occurred.')
+#             break
+#         else:
+#             print('All checked. Strings are Anagram')
+#
+#
+# else:
+#     print("Not anagram - diff lengths")
+>>>>>>> cddca80a059c3260764f5cdf319286d689103712
 
 flames_dict = {'F':'Flower', 'L': 'Lover', 'A': 'Affection', 'M':'Marriage', 'E': 'Enemy', 'S': 'Sister'  }
 flames_list = ['f','l','a','m','e','s']
 
+<<<<<<< HEAD
 dict = {}
 man = 'Lokesh'
 woman = 'Priya'
@@ -781,3 +810,53 @@ for letter in woman:
 print(len(dict))
 
 print(flames_list)
+=======
+
+# Array pair sum:
+# def pair_sum_check(L,V):
+#
+#     # Sets for tracking
+#     seen = set()
+#     output = set()
+#
+#     for i in L:
+#
+#         target = V-i
+#
+#         if target in L:
+#             if i not in seen:
+#                 seen.add(i)
+#                 seen.add(target)
+#                 output.add((i,target))
+#     return output
+#
+# print(pair_sum_check([1,9,2,8,3,7,4,6,5,5,13,14,11,13,-1],10))
+
+
+# missing element:
+def missing_element(A, B):
+    missing = []
+    for i in A:
+        if i in B:
+            B.remove(i)
+        else:
+            missing.append(i)
+
+    for i in missing:
+        print(i)
+
+def missing_element2(A, B):
+    A = sorted(A)
+    B = sorted(B)
+
+    for i,j in zip(A,B):
+        if i!=j:
+            return i
+
+
+
+arr1 = [1,2,3,4,5,6,7]
+arr2 = [3,7,2,1,4,6]
+
+print(missing_element2(arr1,arr2))
+>>>>>>> cddca80a059c3260764f5cdf319286d689103712
