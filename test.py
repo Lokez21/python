@@ -780,7 +780,7 @@ What is the smallest positive number that is evenly divisible by all of the numb
 #     arr2 = sorted(arr2)
 #
 #     dict = {}
-#
+#     missing = []
 #     for i in arr1:
 #         if i not in dict:
 #             dict[i]=1
@@ -791,13 +791,239 @@ What is the smallest positive number that is evenly divisible by all of the numb
 #         if j in dict:
 #             dict[j]-=1
 #
+#
 #     for k,v in dict.items():
 #         if dict[k]!=0:
-#             print(k)
-
-# arr1 = [1,3,2,4,5,6,7]
+#             missing.append(k)
+#
+#     return missing
+#
+# arr1 = [1,3,2,4,5,6,7,8]
 # arr2 = [3,7,2,1,4,6]
 #
 # print(missing_element3(arr1,arr2))
 
-new
+# new challenge:
+
+# Largest Continious Sum:
+
+# list = [-3,1,2,-1,3,4,10,10,-10,-1]
+# # soln1:
+# sum_till_now = largest_sum = list[0]
+# pointer_start = 0
+# pointer_end = 0
+# max_list = []
+# counter = 0
+# sum = 0
+# for i in list[1:]:
+#     counter+=1
+#     sum_till_now += i
+#     if sum_till_now > largest_sum:
+#         largest_sum = sum_till_now
+#         pointer_end = i
+#         max_list = list[0:counter+1]
+# print(largest_sum)
+#
+# for j in max_list[::-1]:
+#     sum+=j
+#     print(sum)
+#     if sum==largest_sum:
+#         print(j)
+#         break
+# print(pointer_start)
+# print(pointer_end)
+# print(max_list)
+
+
+# soln2:
+# current_sum = max_sum = list[0]
+#
+# for i in list[1:]:
+#     current_sum = max(current_sum+i,i)
+#     max_sum = max(max_sum, current_sum)
+#
+# print(max_sum)
+
+# Sentence reversal:
+
+# s = "   this is a sample text    "
+
+# Soln - Easy method:
+# string1 = string.strip().split()
+#
+# for i in string1[::-1]:
+#     print(i, end=" ")
+#
+
+# Soln2 - using while:
+# words = []
+# length = len(s)
+# i=0
+#
+# while i<length:
+#     if s[i]!=' ':
+#         word_start = i
+#
+#         while i<length and s[i]!=' ':
+#             i+=1
+#
+#         words.append(s[word_start:i])
+#     i+=1
+#
+# print(words)
+
+# soln2 - Using for:
+
+# s = "   this is a sample text "
+#
+# words = []
+# l = len(s)
+# word_initialized=False
+#
+# for i in range(l):
+#     if s[i] != ' ' and word_initialized==False:
+#         word_initialized = True
+#         word_start = i
+#
+#     elif (word_initialized==True and s[i]==" "):
+#         word_end = i
+#         word_initialized = False
+#         words.append(s[word_start:word_end])
+#
+# if word_initialized==True:
+#         words.append(s[word_start:])
+
+# words.append(s[3:7])
+# print(words)
+
+# String Compression:
+# s = "AAAAaaBCccAA"
+#
+# Expected result:
+# A8B1C3
+#
+# def str_comp(s):
+#     s = s.upper()
+#
+#     dict = {}
+#     length = len(s)
+#     c=''
+#
+#     for i in s:
+#         if i in dict:
+#             dict[i] += 1
+#
+#         else:
+#             dict[i] = 1
+#
+#     for k,v in dict.items():
+#         c+=k
+#         c+=str(v)
+#
+#     return (c)
+#
+# # print(dict)
+#
+# print(str_comp(s))
+
+# s = "AAAAaaBCccAA"
+#
+# # Expected result:
+# # A6B1C3 but without using dict
+#
+# count = ''
+# store= ''
+# output = ''
+#
+# for i in s:
+#
+#     if store != i:
+#         output += store + str(count)
+#         store = i
+#         count = 1
+#
+#     elif store == i:
+#         store = i
+#         count += 1
+#
+# output += store + str(count)
+#
+# print(output)
+
+# Unique Characters in string:
+# Using for loop:
+#     s = "I love  u"
+#     def is_unique_ignore_spaces(s):
+#         store = ''
+#         for i in s:
+#             if i!=' ' and i not in store:
+#                 store+=i
+#             else:
+#                 return False
+#         return True
+#
+#     print(is_unique_ignore_spaces(s))
+
+# Using while loop:
+s = "I love yu "
+
+def is_unique(s):
+    leng = len(s)
+    i=0
+    cont = ''
+
+    while i<leng:
+        if s[i]==' ':
+            i+=1
+            continue
+        if s[i] not in cont:
+            cont+=s[i]
+        else:
+            return False
+
+        i+=1
+
+    return True
+
+print(is_unique(s))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Done
