@@ -965,55 +965,301 @@ What is the smallest positive number that is evenly divisible by all of the numb
 #     print(is_unique_ignore_spaces(s))
 
 # Using while loop:
-s = "I love yu "
+# s = "I love yu  "
+#
+# def is_unique(s):
+#     leng = len(s)
+#     i=0
+#     cont = ''
+#
+#     while i<leng:
+#         if s[i]==' ':
+#             i+=1
+#             continue
+#         if s[i] not in cont:
+#             cont+=s[i]
+#         else:
+#             return False
+#
+#         i+=1
+#
+#     return True
+#
+# print(is_unique(s))
 
-def is_unique(s):
-    leng = len(s)
-    i=0
-    cont = ''
+                                                    # Stack / Queue / Deque data structures #
+# Stack data structure:
+# class Stack(object):
+#     def __init__(self):
+#         # self.item = item
+#         self.list = []
+#
+#     def push(self, item):
+#         self.item = item
+#         self.list.append(self.item)
+#         return ('''item inserted.''')
+#
+#     def viewList(self):
+#         return (self.list)
+#
+#     def peek(self):
+#         self.l = len(self.list)
+#         if self.l>0:
+#             return (self.list[(self.l)-1])
+#
+#     def pop(self):
+#         self.list.pop(-1)
+#         print(self.list)
+#
+#     def count(self):
+#         self.l = len(self.list)
+#         return self.l
+#
+#     def isEmpty(self):
+#         self.l = len(self.list)
+#         if self.l == 0:
+#             return True
+#         else:
+#             return False
+#
+#     def popAll(self):
+#         while len(self.list)>0:
+#             print('---- Popping ----')
+#             self.list.pop(0)
+#             print(self.list)
+#
+# # so = Stack()
+# # print(so.push('first'))
+# # print(so.push('second'))
+# # print(so.viewList())
+# # print(so.count())
+# # so.popAll()
 
-    while i<leng:
-        if s[i]==' ':
-            i+=1
-            continue
-        if s[i] not in cont:
-            cont+=s[i]
-        else:
-            return False
+# Queue data structure:
+# class Queue():
+#     def __init__(self):
+#         self.list = []
+#
+#     def enqueue(self, item):
+#         self.list.insert(0,item)
+#
+#     def dequeue(self):
+#         return (self.list.pop())
+#
+#     def peek(self):
+#         print (self.list[0])
+#
+#     def size(self):
+#         print(len(self.list))
+#
+#     def isEmpty(self):
+#         if self.list == []:
+#             return True
+#         else:
+#             return False
+#
+#     def viewFullQueue(self):
+#         print(self.list)
+#
+#
+# q = Queue()
+# q.enqueue(1)
+# q.enqueue(2)
+# q.enqueue(3)
+# q.viewFullQueue()
+# q.peek()
+# q.dequeue()
+# q.viewFullQueue()
 
-        i+=1
+# Implementation of Deque data structure:
 
-    return True
+# class Deque():
+#     def __init__(self):
+#         self.list = []
+#
+#     def addToFront(self, item):
+#         self.list.insert(0,item)
+#
+#     def addToBack(self, item):
+#         self.list.append(item)
+#
+#     def DeleteFromFront(self):
+#         self.list.pop(0)
+#
+#     def DeleteFromBack(self):
+#         self.list.pop()
+#
+#     def isEmpty(self):
+#         if self.list==[]:
+#             return True
+#         else:
+#             return False
+#
+#     def size(self):
+#         return (len(self.list))
+#
+#     def viewDeque(self):
+#         print(self.list)
+#
+#     def peekFront(self):
+#         return self.list[0]
+#
+# string = "()(){}(}{)"
+#
+# def balancedBracketsChecker(s):
+#     open, closed, closed_dict = '{[(' , '}])', {'}':'{', ']':'[', ')':"("}
+#
+#     if len(string)%2 != 0:
+#         return False
+#
+#     else:
+#         openstorage = Deque()
+#
+#         for i in string:
+#
+#             if i in open:
+#                 openstorage.addToFront(i)
+#             elif i in closed:
+#                 if openstorage.size()>0 and (str(closed_dict[i]) == openstorage.peekFront()):
+#                     openstorage.DeleteFromFront()
+#                 else:
+#                     return False
+#
+#         if openstorage.size() == 0:
+#             return True
+#         else:
+#             return False
+#
+# print(balancedBracketsChecker(string))
 
-print(is_unique(s))
+
+# class Queue2Stacks():
+#     def __init__(self):
+#         self.instack = []
+#         self.outstack = []
+#
+#     def enqueue(self, item):
+#         self.item = item
+#         self.instack.append(self.item)
+#
+#     def dequeue(self):
+#         self.outstack = self.instack
+#         return self.outstack.pop(0)
+#
+# q = Queue2Stacks()
+#
+# for i in range(5):
+#     q.enqueue(i)
+#
+# for i in range(5):
+#     print (q.dequeue())
+
+                                                            #-- Linked Lists: --#
+
+# Singly linked list:
+
+# class Node(object):
+#     def __init__(self, value):
+#         self.value = value
+#         self.next = None
+#
+# a = Node(1)
+# b = Node(2)
+# c = Node(3)
+# d = Node(4)
+# e = Node(5)
+#
+# a.next = b
+# b.next = c
+# c.next = d
+# d.next = e
+#
+#
+# def nth_from_last(node, n):
+#     start_node = node
+#     total_ele_in_node = 0
+#
+#     while node:
+#         total_ele_in_node += 1
+#         node = node.next
+#
+#     nth_ele = total_ele_in_node - (n-1)
+#
+#     count = 0
+#     node = start_node
+#     while node:
+#         count += 1
+#
+#         if count == nth_ele:
+#             return node
+#         node = node.next
+#
+# print(nth_from_last(a,4))
+
+#-- End of Linked list --#
 
 
 
+# Linked list - Reversal:
 
+# Desired output(Reversal):
+# d.next = c
+# c.next = b
+# b.next = a
 
+# def reverse(node):
+#     current = node
+#     prev = None
+#     next = None
+#
+#     while current:
+#         next = current.next
+#         current.next = prev
+#         prev = current
+#         current = next
+#
+#     return prev
+#
+# print(reverse(a))
+#
+# print (d.next.value)
+# print (c.next.value)
+# print (b.next.value)
 
+# Singly linked list cycle check:
+# def cycleCheck(node):
+#     node_list = []
+#
+#     while node.next != None:
+#
+#         node_list.append(node)
+#
+#         if node.next in node_list:
+#             return True
+#
+#         node = node.next
+#
+#     return False
 
+# print(cycleCheck(a))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Doubly-Linked List:
+# class DoublyLinkedList(object):
+#     def __init__(self, data):
+#         self.data = data
+#         self.prev = None
+#         self.next = None
+#
+# a = DoublyLinkedList(3)
+# b = DoublyLinkedList(6)
+# c = DoublyLinkedList(9)
+#
+# a.next = b
+# b.prev = a
+# b.next = c
+#
+# print(b.next.data)
+# print(b.prev.data)
 
 
 
