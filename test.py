@@ -1261,7 +1261,28 @@ What is the smallest positive number that is evenly divisible by all of the numb
 # print(b.next.data)
 # print(b.prev.data)
 
+                                                                #-- Recursion --#
 
+def fact(n):
+    count = 0
+    count_rev = 0
+    # base case
+    if n==0:
+        return 1
+    else:
+        count += 1
+        print(f'{n}*{n-1}!')
+        return n*fact(n-1)
+
+print(fact(5))
+
+# n = 5
+# res = 1
+#
+# for i in range(1, n+1):
+#     res = i*res
+#
+# print(res)
 
 
 
