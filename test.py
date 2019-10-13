@@ -1263,26 +1263,145 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
                                                                 #-- Recursion --#
 
-def fact(n):
-    count = 0
-    count_rev = 0
-    # base case
-    if n==0:
+
+# Factorial:
+# def fact(n):
+#     # base case
+#     if n==0:
+#         return 1
+#     else:
+#         return n*fact(n-1)
+#
+# print(fact(100))
+
+# Factorial using Memoization:
+# fact_memo = {}
+# def fact(n):
+#     # base case
+#     if n<2:
+#         return 1
+#     else:
+#         if n not in fact_memo:
+#             fact_memo[n] = n*fact(n-1)
+#
+#     return fact_memo[n]
+#
+# print(fact(100))
+# print(fact_memo[20])
+
+# Creating memoization data structure:
+
+# class Memoization(object):
+#     def __init__(self,function):
+#         self.function = function
+#         self.memo = {}
+#
+#     def __call__(self, *args):
+#         if args not in self.memo:
+#             self.memo[args]=self.function(*args)
+#         return self.memo[args]
+#
+# def fact_to_be_memod(n):
+#     if n==0:
+#         return 1
+#     else:
+#         return n*fact_to_be_memod(n-1)
+#
+# memo = Memoization(fact_to_be_memod(5))
+# print(memo.__call__())
+
+
+# Cumulative sum:
+# def cum_sum(n):
+#     if n==0:
+#         return 0
+#     else:
+#         return n+cum_sum(n-1)
+#
+# print(cum_sum(10))
+
+# sum of all the individual digits in an integer
+# def sum_of_digits(n):
+#     r=n%10
+#     if n==0:
+#         return 0
+#     else:
+#     # n=n//10
+#         return r+sum_of_digits(n//10)
+#
+#
+# n=1111
+#
+# print(sum_of_digits(n))
+
+# def word_split(string, list, out=[]):
+#
+#     for word in list:
+#         if word in string:
+#             out.append(word)
+#             string=string.replace(word,'')
+#             return word_split(string, list, out)
+#
+#     if string =="":
+#         return out
+#     else:
+#         return (f'"{string}" is left out.')
+#
+# print(word_split('ilovedogsJohn',['i','am','a','dogs','lover','love','John']))
+
+# String Reversal - Recursion:
+# def str_rev(s):
+#     l=''
+#
+#     for i in s:
+#         l=i+l
+#
+#     print(l)
+#
+# def str_rev_rec(s):
+#     if len(s)<=1:
+#         return s
+#     else:
+#         return str_rev_rec(s[1:])+s[0]
+#
+# print(str_rev_rec("Cow"))
+
+#Fibonacci sequence - simple iterative soln:
+# def fib_it(n):
+#     a=-0.1
+#     b=1
+#     for i in range(n+1):
+#         c=a+b
+#         a=b
+#         b=c
+#         print(b)
+#
+# fib_it(100)
+
+# Fibonacci Recursive:
+def fib_rec(n):
+    if n<=1:
         return 1
     else:
-        count += 1
-        print(f'{n}*{n-1}!')
-        return n*fact(n-1)
+        return fib_rec(n-1)+fib_rec(n-2)
 
-print(fact(5))
+# Fibonacci Recursive using Memoization:
+fibo_memo = {}
+def fib_rec_mem(n):
+    if n<=1:
+        return 1
+    else:
+        if n not in fibo_memo:
+            fibo_memo[n] = fib_rec(n-1)+fib_rec(n-2)
+        return fibo_memo[n]
 
-# n = 5
-# res = 1
-#
-# for i in range(1, n+1):
-#     res = i*res
-#
-# print(res)
+for i in range(11):
+    print(fib_rec_mem(i))
+
+
+
+
+
 
 
 
