@@ -1261,7 +1261,7 @@ What is the smallest positive number that is evenly divisible by all of the numb
 # print(b.next.data)
 # print(b.prev.data)
 
-                                                                #-- Recursion --#
+                                                                        #-- Recursion --#
 
 
 # Factorial:
@@ -1368,41 +1368,257 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
 #Fibonacci sequence - simple iterative soln:
 # def fib_it(n):
-#     a=-0.1
+#     a=0
 #     b=1
 #     for i in range(n+1):
-#         c=a+b
-#         a=b
-#         b=c
+#        a,b = b,b+a #Tuple unpacking method, python feature
 #         print(b)
 #
 # fib_it(100)
 
 # Fibonacci Recursive:
-def fib_rec(n):
-    if n<=1:
-        return 1
-    else:
-        return fib_rec(n-1)+fib_rec(n-2)
-
+# def fib_rec(n):
+#     if n==0 or n==1:
+#         return n
+#     else:
+#         return fib_rec(n-1)+fib_rec(n-2)
+#
 # Fibonacci Recursive using Memoization:
-fibo_memo = {}
-def fib_rec_mem(n):
-    if n<=1:
-        return 1
-    else:
-        if n not in fibo_memo:
-            fibo_memo[n] = fib_rec(n-1)+fib_rec(n-2)
-        return fibo_memo[n]
-
-for i in range(11):
-    print(fib_rec_mem(i))
-
-
-
+# n=1000
+# cache = {}
+# def fib_rec_mem(n):
+#     if n==0 or n==1:
+#         return n
+#     else:
+#         if n not in cache:
+#             cache[n] = fib_rec_mem(n-1)+fib_rec_mem(n-2)
+#         return cache[n]
+#
+# for i in range(n+1):
+#     print(fib_rec_mem(i))
 
 
+# Coin change problem:
+# n=1
+# change = {0.01,0.02,0.05,0.10,0.50}
+# change = [10,5,2,1]
+# out = []
+#
+# def coin_change(n,change_list):
+#     change_dict = {}
+#     for i in change_list:
+#         change_dict[i] = 0
+#         # print(change_dict)
+#
+#     if n!=0:
+#         for i in change:
+#             if n/i>0:
+#                 change_dict[i] = n//i
+#                 n=n%i
+#
+#     else:
+#         return ('n should be > 0.')
+#
+#     if n==0:
+#         for k,v in change_dict.items():
+#             print(v)
+#             if v>0:
+#                 for i in range(v):
+#                     out.append(k)
+#
+#     return out, len(out)
+#
+# print(coin_change(n,change))
 
+# Coin change problem using Recursion:
+# n = 63
+# change = [1,5,10,25,21]
+# def rec_coin(m, change_list, out=[]):
+#
+#     change_list = sorted(change_list, reverse=True)
+#     if m==0:
+#         return len(out)
+#     else:
+#         i=change_list[0]
+#
+#         if m//i>=1:
+#             times = m//i
+#             for j in range(times):
+#                 out.append(i)
+#             m=m%i
+#             change_list.pop(0)
+#         elif m//i<1:
+#             change_list.pop(0)
+#         else:
+#             return ('!!Double check the change list as exact change is not possible.')
+#
+#         return rec_coin(m,change_list)
+#
+# print(rec_coin(n,change))
+# tree = [ 'a',['b',['d',[], []],['e',[], []]],        ['c', ['f',[], []], []]]
+
+
+# def rec_coin(target,coins,known_results):
+#     '''
+#     INPUT: Target change amount and list of coin values
+#     OUTPUT: Minimum coins needed to make change
+#
+#     Note, this solution is not optimized.
+#     '''
+#
+#     # Default to target value
+#     min_coins = target
+#
+#     # Check to see if we have a single coin match (BASE CASE)
+#     if target in coins:
+#         known_results[target] = 1
+#         return 1
+#
+#     elif known_results[target] > 0:
+#         return known_results[target]
+#     else:
+#         # for every coin value that is <= than target
+#         for i in [c for c in coins if c <= target]:
+#
+#             # Recursive Call (add a count coin and subtract from the target)
+#             num_coins = 1 + rec_coin(target-i,coins,known_results)
+#
+#             # Reset Minimum if we have a new minimum
+#             if num_coins < min_coins:
+#
+#                 min_coins = num_coins
+#                 known_results[target] = min_coins
+#
+#     return min_coins
+# target = 63
+# known_results = [0]*(target+1)
+# print(rec_coin(target,[1,5,10,25,21], known_results))
+# --Needs optimisation-- #
+# --Optimised-- #
+
+                                                                            # Trees
+
+tree = ['a',['b',['d',[],[]],['e',[],[]]],['c',['f',[],[]],[]]]
+# print(tree)
+
+# Tree Implementation using Functional programming:
+
+# def createBinaryTree(r):
+#     return [r, [], []]
+#
+# def insertLeft(root, newBranch):
+#     t = root.pop(1)
+#     if len(t)>1:
+#         root.insert(1,[newBranch,t,[]])
+#     else:
+#         root.insert(1,[newBranch,[],[]])
+#     return root
+#
+# def insertRight(root, newBranch):
+#     t = root.pop(2)
+#     if len(t)>1:
+#         root.insert(2,[newBranch,[],t])
+#     else:
+#         root.insert(2,[newBranch,[],[]])
+#     return root
+#
+# def getRootVal(root):
+#     return root[0]
+#
+# def setRootVal(root, newVal):
+#     root[0]=newVal
+#
+# def getLeftChild(root):
+#     return root[1]
+#
+# def getRightChild(root):
+#     return root[2]
+#
+# r=createBinaryTree(4)
+# print(r)
+#
+# print(insertLeft(r, 5))
+# print(insertLeft(r, 6))
+# print(insertRight(r, 7))
+# print(insertRight(r, 8))
+#
+# print(setRootVal(r,1))
+# print(getRootVal(r))
+#
+# print(getLeftChild(r))
+
+
+# Tree Implementation using OOP:
+
+class BinaryTree():
+    def __init__(self, root):
+        self.key = root
+        self.leftchild = None
+        self.rightchild = None
+
+    def insertLeft(self,newNode):
+        if self.leftchild == None:
+            self.leftchild = BinaryTree(newNode)
+        else:
+            new = BinaryTree(newNode)
+            old = self.leftchild
+            new.leftchild = old
+            self.leftchild = new
+        return self.leftchild
+
+    def insertRight(self, newNode):
+        if self.rightchild == None:
+            self.rightchild = BinaryTree(newNode)
+        else:
+            new = BinaryTree(newNode)
+            old = self.rightchild
+            new.rightchild = old
+            self.rightchild = new
+        return self.rightchild
+
+    def getLeftChild(self):
+        return self.leftchild
+
+    def getRightChild(self):
+        return self.rightchild
+
+    def getRootValue(self):
+        return self.key
+
+    def setRootValue(self, newVal):
+        self.key = newVal
+
+obj = BinaryTree(7)
+obj.insertLeft(1).insertRight('x')
+obj.insertLeft(2)
+obj.insertRight(3)
+obj.insertRight(4)
+# print(obj.getRootValue())
+
+                                                        # Tree Traversals within Binary Tree
+def preorder(obj):
+    if obj != None:
+        print(obj.getRootValue())
+        preorder(obj.getLeftChild())
+        preorder(obj.getRightChild())
+
+# preorder(obj)
+
+def postorder(obj):
+    if obj != None:
+        postorder(obj.getLeftChild())
+        postorder(obj.getRightChild())
+        print(obj.getRootValue())
+
+postorder(obj)
+
+def inorder(obj):
+    if obj != None:
+        inorder(obj.getLeftChild())
+        print(obj.getRootValue())
+        inorder(obj.getRightChild())
+
+# inorder(obj)
 
 
 
