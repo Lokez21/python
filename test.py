@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Leap year
+# Leap year:
 
 # year = 100
 
@@ -1550,78 +1550,319 @@ tree = ['a',['b',['d',[],[]],['e',[],[]]],['c',['f',[],[]],[]]]
 
 # Tree Implementation using OOP:
 
-class BinaryTree():
-    def __init__(self, root):
-        self.key = root
-        self.leftchild = None
-        self.rightchild = None
-
-    def insertLeft(self,newNode):
-        if self.leftchild == None:
-            self.leftchild = BinaryTree(newNode)
-        else:
-            new = BinaryTree(newNode)
-            old = self.leftchild
-            new.leftchild = old
-            self.leftchild = new
-        return self.leftchild
-
-    def insertRight(self, newNode):
-        if self.rightchild == None:
-            self.rightchild = BinaryTree(newNode)
-        else:
-            new = BinaryTree(newNode)
-            old = self.rightchild
-            new.rightchild = old
-            self.rightchild = new
-        return self.rightchild
-
-    def getLeftChild(self):
-        return self.leftchild
-
-    def getRightChild(self):
-        return self.rightchild
-
-    def getRootValue(self):
-        return self.key
-
-    def setRootValue(self, newVal):
-        self.key = newVal
-
-obj = BinaryTree(7)
-obj.insertLeft(1).insertRight('x')
-obj.insertLeft(2)
-obj.insertRight(3)
-obj.insertRight(4)
-# print(obj.getRootValue())
-
-                                                        # Tree Traversals within Binary Tree
-def preorder(obj):
-    if obj != None:
-        print(obj.getRootValue())
-        preorder(obj.getLeftChild())
-        preorder(obj.getRightChild())
-
+# class BinaryTree():
+#     def __init__(self, root):
+#         self.key = root
+#         self.leftchild = None
+#         self.rightchild = None
+#
+#     def insertLeft(self,newNode):
+#         if self.leftchild == None:
+#             self.leftchild = BinaryTree(newNode)
+#         else:
+#             new = BinaryTree(newNode)
+#             old = self.leftchild
+#             new.leftchild = old
+#             self.leftchild = new
+#         return self.leftchild
+#
+#     def insertRight(self, newNode):
+#         if self.rightchild == None:
+#             self.rightchild = BinaryTree(newNode)
+#         else:
+#             new = BinaryTree(newNode)
+#             old = self.rightchild
+#             new.rightchild = old
+#             self.rightchild = new
+#         return self.rightchild
+#
+#     def getLeftChild(self):
+#         return self.leftchild
+#
+#     def getRightChild(self):
+#         return self.rightchild
+#
+#     def getRootValue(self):
+#         return self.key
+#
+#     def setRootValue(self, newVal):
+#         self.key = newVal
+#
+# tree = BinaryTree(7)
+# tree.insertLeft(4)
+# tree.insertLeft(5).insertRight(6)
+# tree.insertRight(10)
+# tree.insertRight(8)
+# print(tree.getLeftChild().getLeftChild().getRightChild().getRootValue())
+#
+#                                                         # Tree Traversals within Binary Tree
+# def preorder(obj):
+#     if obj != None:
+#         print(obj.getRootValue(), end="")
+#         preorder(obj.getLeftChild())
+#         preorder(obj.getRightChild())
+#
+#
 # preorder(obj)
+# print()
+#
+# def postorder(obj):
+#     if obj != None:
+#         postorder(obj.getLeftChild())
+#         postorder(obj.getRightChild())
+#         print(obj.getRootValue(), end="")
+#
+# postorder(obj)
+# print()
 
-def postorder(obj):
-    if obj != None:
-        postorder(obj.getLeftChild())
-        postorder(obj.getRightChild())
-        print(obj.getRootValue())
+# def inorder(tree):
+#     if tree != None:
+#         inorder(tree.getLeftChild())
+#         print(tree.getRootValue(), end="")
+#         inorder(tree.getRightChild())
+#
+# inorder(tree)
 
-postorder(obj)
+# class newNode:
+#
+#     # Construct to create a new node
+#     def __init__(self, key):
+#         self.data = key
+#         self.left = None
+#         self.right = None
+#
+# # Returns true if given tree is BST.
+# def isBST(root, l = None, r = None):
+#
+#     # Base condition
+#     if (root == None) :
+#         return True
+#
+#
+#     if (l != None and root.data <= l.data) :
+#         return False
+#
+#     if (r != None and root.data >= r.data) :
+#         return False
+#
+#     return isBST(root.left, l, root) and isBST(root.right, root, r)
+#
+# def printLevels(root):
+#
+#     print(root.data)
+#     while root.left != None:
+#         return printLevels(root.left)
+#     while root.left != None:
+#         return printLevels(root.left)
+#
+#
+#
+# # Driver Code
+# root = newNode(7)
+# root.left = newNode(5)
+# root.right = newNode(9)
+# root.left.left = newNode(4)
+# root.left.right = newNode(6)
+# root.right.left = newNode(8)
+# root.right.right = newNode(10)
+# #root.right.left.left = newNode(40)
+# # print(isBST(root))
+# print(printLevels(root))
 
-def inorder(obj):
-    if obj != None:
-        inorder(obj.getLeftChild())
-        print(obj.getRootValue())
-        inorder(obj.getRightChild())
+                                                                            # searching and sorting algorithms
+# def ordered_seq_search(array, num):
+#     pos=0
+#     loop = 0
+#     while pos<len(array) and array[pos]<=num:
+#         loop += 1
+#         if array[pos]==num:
+#             return True, loop
+#         pos += 1
+#     return False, loop
+#
+# array = [1,2,3,4,5,6,8,9,10]
+# num = 7
+# print(ordered_seq_search(array, num))
 
-# inorder(obj)
+
+# Bubble sort algorithm:
+# list = [100,98,97,96]
+#
+#
+# def bubbleSort(list):
+#     l = len(list)
+#     pointer = 0
+#     sort_count = 0
+#
+#     while pointer<l-1:
+#         if list[pointer] > list[pointer+1]:
+#             list[pointer], list[pointer+1] = list[pointer+1], list[pointer]
+#             sort_count = 0
+#         else:
+#             sort_count+=1
+#
+#         if sort_count == l-1:
+#             return list
+#
+#         if pointer == l-2:
+#             pointer = 0
+#             continue
+#
+#         pointer += 1
+#
+# # Using Recursion:
+# list = [100,98,97,96,2,3,1]
+# def rec_bubbleSort(list, sort_count = None):
+#     if sort_count == None:
+#         sort_count = 1
+#     l=len(list)
+#     # base case
+#
+#     if sort_count==0:
+#         return list
+#
+#     else:
+#         sort_count = 0
+#         for i in range(l-1):
+#             if list[i]>list[i+1]:
+#                 list[i], list[i+1] = list[i+1], list[i]
+#                 sort_count += 1
+#
+#         return rec_bubbleSort(list, sort_count)
+#
+# print(rec_bubbleSort(list))
+
+
+# Selection Sort:
+# list = [5,2,1,9,5,6]
+# l = len(list)
+# pointer1 = 0
+#
+# while pointer1<l-1:
+#     lowest = list[pointer1]
+#     pointer2=pointer1+1
+#     while pointer2<l:
+#         if list[pointer2]<lowest:
+#             lowest = list[pointer2]
+#             list[pointer1], list[pointer2]  = lowest, list[pointer1]
+#         pointer2+=1
+#
+#     pointer1 +=1
+#
+# print(list)
+#
+#
+# # Insertion sort:
+# list = [5,2,1,9,7,6]
+# l = len(list)
+# pointer1 = 1
+#
+# while pointer1<l:
+#     temp=pointer1
+#     while list[pointer1] < list[pointer1-1] and pointer1>0:
+#         list[pointer1], list[pointer1-1] = list[pointer1-1], list[pointer1]
+#         pointer1 = pointer1-1
+#
+#     pointer1 = temp+1
+#
+# print(list)
+
+# Merge sort:
+# list = [5,2,1,3,7,6,8,4]
+#
+# def merge_sort(list):
+#     if len(list)>1:
+#         mid = len(list)//2
+#         L = list[:mid]
+#         R = list[mid:]
+#
+#         merge_sort(L)
+#         merge_sort(R)
+#
+#         i,j,k=0,0,0
+#
+#
+#         # Merge happens here
+#         while i<len(L) and j<len(R):
+#
+#             if L[i]<R[j]:
+#                 list[k]=L[i]
+#                 i+=1
+#             else:
+#                 list[k]=R[j]
+#                 j+=1
+#             k+=1
+#
+#         while i<len(L):
+#             list[k]=L[i]
+#             i+=1
+#             k+=1
+#
+#         while j<len(R):
+#             list[k]=R[j]
+#             j+=1
+#             k+=1
+#
+#     return list
+#
+#
+# print(merge_sort(list))
+
+# Amazon1 find the highest profit from the stock prices:
+# def maxprofit(list):
+#     l = len(list)
+#     max_profit, buying, selling = -1,None,None
+#
+#     for i in range(l-1):
+#         for j in range(i+1,l):
+#             if list[j]-list[i]>max_profit:
+#                 max_profit = list[j]-list[i]
+#                 buying, selling = list[i], list[j]
+#     return (max_profit, buying, selling)
+
+# list = [12,1,15,3,10]
+# print(maxprofit(list))
+
+
+#Amazon2 - product of all elements except that element:
+# list = [1,2,3,4]
+#
+# def products_of_rest(l):
+#     l = len(l)
+#     out=[]
+#
+#     for i in range(l):
+#         mul = 1
+#         for j in range(l):
+#             if i!=j:
+#                 mul = mul * list[j]
+#         out.append(mul)
+#     return out
+#
+# print(products_of_rest(list))
+
+
+# Amazon 3 - check for rectangles overlap:
+
+r1 = {
+    'x':2, 'y':4,
+    'w':5, 'h':12
+}
+
+r2 = {
+    'x':6, 'y':-4,
+    'w':4, 'h':6
+}
 
 
 
+
+
+
+
+
+# Quick sort:
+# list = [5,2,1,9,5,6]
 
 
 
