@@ -1498,7 +1498,7 @@ What is the smallest positive number that is evenly divisible by all of the numb
 
                                                                             # Trees
 
-tree = ['a',['b',['d',[],[]],['e',[],[]]],['c',['f',[],[]],[]]]
+# tree = ['a',['b',['d',[],[]],['e',[],[]]],['c',['f',[],[]],[]]]
 # print(tree)
 
 # Tree Implementation using Functional programming:
@@ -1781,7 +1781,6 @@ tree = ['a',['b',['d',[],[]],['e',[],[]]],['c',['f',[],[]],[]]]
 #
 #         i,j,k=0,0,0
 #
-#
 #         # Merge happens here
 #         while i<len(L) and j<len(R):
 #
@@ -1811,7 +1810,7 @@ tree = ['a',['b',['d',[],[]],['e',[],[]]],['c',['f',[],[]],[]]]
 # Amazon1 find the highest profit from the stock prices:
 # def maxprofit(list):
 #     l = len(list)
-#     max_profit, buying, selling = -1,None,None
+#     max_profit, buying, selling = float('-inf'),None,None
 #
 #     for i in range(l-1):
 #         for j in range(i+1,l):
@@ -1819,8 +1818,8 @@ tree = ['a',['b',['d',[],[]],['e',[],[]]],['c',['f',[],[]],[]]]
 #                 max_profit = list[j]-list[i]
 #                 buying, selling = list[i], list[j]
 #     return (max_profit, buying, selling)
-
-# list = [12,1,15,3,10]
+#
+# list = [30,22,21,5]
 # print(maxprofit(list))
 
 
@@ -1841,32 +1840,905 @@ tree = ['a',['b',['d',[],[]],['e',[],[]]],['c',['f',[],[]],[]]]
 #
 # print(products_of_rest(list))
 
+# def fib(n):
+#     a=0
+#     b=1
+#     while n>=0:
+#         c=b+a
+#         print(b)
+#         a=b
+#         b=c
+#         n=n-1
+#
+# def rec_fib(n):
+#     if n==0 or n==1:
+#         return 1
+#     else:
+#         return rec_fib(n-1)+rec_fib(n-2)
+# # print(rec_fib(10))
+#
+# n=10
+# while n!=0:
+#     print(rec_fib(n))
+#     n=n-1
 
-# Amazon 3 - check for rectangles overlap:
+# string = 'here'
+#
+#
+# def rev_str(st, out=""):
+#     l=len(st)
+#
+#     if l==1:
+#         out = out+st
+#         return out
+#
+#     else:
+#         out = out+st[-1]
+#         # print(out)
+#         st = st[0:-1]
+#         return rev_str(st, out)
+#
+# print(rev_str(string))
+# import math
+# print(math.sqrt(8))
 
-r1 = {
-    'x':2, 'y':4,
-    'w':5, 'h':12
-}
+# n=99
+# i =1
+# while i*i<=n:
+#     res = i
+#     i += 1
+#
+# print(res)
 
-r2 = {
-    'x':6, 'y':-4,
-    'w':4, 'h':6
-}
+# Coin and denominations:
+# def solution(n, coins):
+#
+#     # Set up our array for trakcing results
+#     arr = [1] + [0] * n
+#
+#     for coin in coins:
+#         for i in range(coin, n + 1):
+#             arr[i] += arr[i - coin]
+#
+#     if n == 0:
+#         return 0
+#     else:
+#         return arr[n]
+#
+# print(solution(100, [1,2,5]))
+
+# Binary search tree check:
+
+
+
+# Remove duplicates in a string:
+# def remove_duplicates(string):
+#     if len(string)==0:
+#         return ('omg string is null')
+#     elif len(string)==1:
+#         return (string)
+#     else:
+#         string = string.lower()
+#         out = ""
+#         for i in string:
+#             if i not in out:
+#                 out = out+i
+#
+#         return out
+#
+# string = "tree traversal"
+# print(remove_duplicates(string))
+
+# Given a list of integers and a target number, write a function that returns a boolean indicating if its possible to sum two integers from the list to reach the target number
+# list = [1,2,3,5,6,7]
+# target = 5
+#
+# def check_sum(list, target):
+#     l=len(list)
+#     for i in range(l):
+#         for j in range(l):
+#             if i!=j:
+#                 if list[i]+list[j] == target:
+#                     return ((list[i], list[j]))
+#
+#     return False
+#
+# # print(check_sum(list, target))
+#
+# # another: solution:
+# def check_sum1(list, target):
+#     seen = []
+#     for i in list:
+#         num2  = target - i
+#         seen.append(num2)
+#         if i in seen:
+#             return True
+#
+# print(check_sum1(list, target))
 
 
 
 
+# Given a list of account ID numbers (integers) which contains duplicates, find the one unique integer. (the list is guaranteed to only have one unique (non-duplicated) integer
+
+# list = [22,23,23,9,9,5,5,21,22]
+#
+# def find_unique(list):
+#     l=len(list)
+#     found = {}
+#     for i in list:
+#         if i not in found:
+#             found[i]=1
+#         else:
+#             found[i]+=1
+#
+#     for i,j in found.items():
+#         if j ==1:
+#             return(i)
+#
+# print(find_unique(list))
 
 
+# c = [0, 0, 1, 0, 0, 1, 0]
+#
+# def jumpingOnClouds(c):
+#     n=len(c)
+#     i,count=0,0
+#     while i<n-1:
+#         if i+2<=n-1 and c[i+2]!=1:
+#             i+=2
+#             count+=1
+#         else:
+#             i+=1
+#             count+=1
+#
+#     return(count)
+#
+# print(jumpingOnClouds(c))
+
+# def repeatedString(s, n):
+#     i,count=0,0
+#     l=len(s)
+#     if l==1:
+#         return n
+#     else:
+#         while l<n:
+#             s+=s[i]
+#             i+=1
+#             l+=1
+#             if i>l-1:
+#                 i=0
+#         for i in s:
+#             if i == 'a':
+#                 count+=1
+#
+#         return count
 
 
-# Quick sort:
-# list = [5,2,1,9,5,6]
+# def repeatedString(s,n):
+#     count = 0
+#     l=len(s)
+#
+#     if l==1 and s=='a':
+#         return n
+#
+#     elif l==1 and s!='a':
+#         return 0
+#
+#     elif l==0:
+#         return 0
+#
+#     elif l>1:
+#         if n<l:
+#             s=s[:n]
+#             for i in s:
+#                 if i =='a':
+#                     count+=1
+#             return count
+#
+#         else:
+#
+#             for i in s:
+#                 if i =='a':
+#                     count+=1
+#
+#             mul = n//l
+#             count *= mul
+#
+#             for i in range(n%l):
+#                 if s[i]=='a':
+#                     count += 1
+#
+#             return count
+#
+# s='ojowrdcpavatfacuunxycyrmpbkvaxyrsgquwehhurnicgicmrpmgegftjszgvsgqavcrvdtsxlkxjpqtlnkjuyraknwxmnthfpt'
+# n=685118368975
+# print(repeatedString(s,n))
+
+# out = ""
+# st = "here"
+# out = out + st[-1]
+# print(st[0:-1])
+# print(out)
+
+# from collections import defaultdict
+#
+# d=defaultdict(lambda:'a')
+#
+# for i in range(10):
+#     d[i]=d[i]+str(i)
+#
+# print(d)
+
+# Arrays:
+# a=[[1,2,3],[1,2,3],[1,2,3]]
+# print(a[0][1])
+
+# def plusMinus(arr):
+#     pos,neg,neut = 0,0,0
+#     l=len(arr)
+#     for i in arr:
+#         if i>0:
+#             pos+=1
+#         elif i<0:
+#             neg+=1
+#         else:
+#             neut+=1
+#
+#     f_pos=float(pos/l)
+#     f_neg=float(neg)
+#     f_neut=float(neut/l)
+#     print (f"%.{l}f" % f_pos)
+#     print (f"%.{l}f" % f_neg)
+#     print (f"%.{l}f" % f_neut)
+# plusMinus([-4,3,-9,0,4,1])
+
+#
+# L=[5,5,5,5,5]
+#
+# def minmax(L):
+#     max=max(L)
+#     count=0
+#     for i in L:
+#         if i == max:
+#             count+=1
+#     return count
+# minmax(L)
+
+# def timeConversion(s):
+#     suffix = s[-2] + s[-1]
+#     s=s[0:8]
+#     L=s.split(':')
+#     h=int(L[0])
+#     m=L[1]
+#     s=L[2]
+#
+#     if suffix=='PM' and h>=1 and h<12:
+#         h=h+12
+#     elif suffix=='AM':
+#         if h==12:
+#             h=0
+#
+#     print(f'{h:02d}:{m}:{s}')
+#
+# timeConversion('12:45:54PM')
+#
+# def dayOfProgrammer(year):
+#     out=''
+#     leapyear=0
+#     if year > 1918:
+#         if year%4==0:
+#             if year%100==0:
+#                 if year%400==0:
+#                     leapyear=1
+#                 else:
+#                     leapyear = 0
+#             else:leapyear=1
+#
+#         else:leapyear=0
+#
+#     elif year<1918:
+#         if year%4==0:
+#             leapyear=1
+#         else:
+#             leapyear=0
+#
+#     if year==1918:
+#         return ('26.09.'+str(year))
+#
+#     if leapyear==1:
+#         out+='12.09.'+str(year)
+#     else:
+#         out+='13.09.'+str(year)
+#     return out
+# print(dayOfProgrammer(2020))
 
 
+# def asd(bill, k, b):
+#     count=0
+#     for i in range(len(bill)):
+#         if i==k:
+#             continue
+#         else:
+#             count+=bill[i]
+#
+#     if b==count/2:
+#         return ('asd')
+#
+#     return int(b-(count/2))
+#
+# print(asd([3,10,2,9],1,7))
+
+# def pageCount(n,p):
+#     i,j,c1,c2=1,n,0,0
+#
+#     while i!=p or j!=p:
+#         i+=1
+#         if i%2==0:
+#             c1+=1
+#
+#         j-=1
+#         if j%2==1:
+#             c2+=1
+#
+#     if c1>c2:
+#         return c2
+#
+#     return c1
+#
+# print(pageCount(3,0))
+
+# n=4
+# if n%2!=0:
+#     print('Weird')
+# elif n%2==0:
+#     if n in range(2,6):
+#         print('Not Weird')
+#     elif n in range(6,21):
+#         print('Weird')
+#     elif n>20:
+        # print('Not Weird')
 
 
+# def getMoneySpent(b,keyboards, drives):
+#     b=b[0]
+#     i,count=0,0
+#     while i<len(keyboards):
+#         j=0
+#         while j<len(drives):
+#             if keyboards[i]+drives[j]<=b and keyboards[i]+drives[j]>count:
+#                 count = keyboards[i]+drives[j]
+#             j+=1
+#         i+=1
+#
+#     return -1 if count==0 else count
+#
+# print(getMoneySpent([10,2,3], [3,1], [5,2,8]))
+
+# def countApplesAndOranges(s, t, a, b, apples, oranges):
+#     counta, counto = 0,0
+#     for i in apples:
+#         if a+i>=s and a+i<=t:
+#             counta+=1
+#
+#     for i in oranges:
+#         if b+i>=s and b+i<=t:
+#             counto+=1
+#
+#     print(counta)
+#     print(counto)
+#
+# countApplesAndOranges(7,11,6,13,[-2,2,1],[5,-6])
+
+# def breakingRecords(scores):
+#     min, max, count_max, count_min = float('inf'),0,-1,-1
+#     for i in scores:
+#         if i>max:
+#             count_max+=1
+#             max=i
+#         if i<min:
+#             count_min+=1
+#             min=i
+#     return (count_max, count_min)
+#
+# print(breakingRecords([0, 9, 3, 10, 2, 20]))
+
+# def birthday(s, d, m):
+#     count=0
+#     for i in range(len(s)-m+1):
+#
+#         if sum(s[i:i+m])==d:
+#             count+=1
+#     return count
+#
+# print(birthday([1,4,2,3,1,1],6,3))
+
+# def insertionSort1(n, arr):
+#     to_sort=arr[n-1]
+#     i=n-1
+#     # print(arr[n-1])
+#     sortedd = False
+#     while i>=0 and sortedd==False:
+#         i-=1
+#         if arr[i]>to_sort:
+#             arr[i+1]=arr[i]
+#         else:
+#             arr[i+1]=to_sort
+#             sortedd=True
+#         if i==-1:
+#             arr[i+1]=to_sort
+#         for z in arr:
+#             print(z, end=' ')
+#         print()
+#
+# insertionSort1(10,[2, 3, 4, 5, 6, 7, 8, 9, 10, 1])
+
+# def camelcase(s):
+#     n=len(s)
+#     out,word_start,list = '',0,[]
+#     for i in range(n):
+#         if s[i].upper()==s[i]:
+#             list.append(s[word_start:i])
+#             word_start=i
+#     list.append(s[word_start:n])
+#     out = len(list)
+#     return out
+#
+# print(camelcase('thisIsString'))
+
+# Map:
+# def func(a):
+#     a+=a
+#     return a
+#
+# b=[1,2,3,4]
+#
+# m=map(func,b)
+# print(list(m))
+
+# def myfunc(a):
+#   return len(a)
+#
+# x = map(myfunc, ('apple', 'banana', 'cherry'))
+#
+# print(x)
+#
+# #convert the map into a list, for readability:
+# print(list(x))
+
+# Filter:
+# ages = [5, 12, 17, 18, 24, 32]
+#
+# def myFunc(x):
+#   if x < 18:
+#     return False
+#   else:
+#     return True
+#
+# adults = filter(myFunc, ages)
+#
+# for x in adults:
+#   print(x)
+
+# 1.
+# def nums1():
+#     x=11
+#     for i in range(x):
+#         if i%2==0:
+#             yield i
+#
+# for i in nums1():
+#     print(i, end='')
+# print('\n')
+#
+# # 2.
+# def nums2(x):
+#     for i in range(x):
+#         if i%2==0:
+#             yield i
+#
+# for i in nums2(11):
+#     print(i, end='')
+
+# Lambda:
+# a=2
+# b=4
+#
+# l= lambda a,b: a+b
+# print(l(a,b))
+
+# import sys
+#
+# dict = {}
+#
+# def makedict(string):
+#     l = string.split()
+#     dict[l[0]]=l[1]
+#
+# n=int(sys.stdin.readline())
+#
+# for i in range(n):
+#     makedict(str(sys.stdin.readline()))
+#
+# inp = sys.stdin.readline().strip()
+# while inp:
+#     if inp in dict:
+#         print(f'{inp}={dict[inp]}')
+#     else:
+#         print('Not found')
+#     inp = sys.stdin.readline().strip()
+
+# List Comprehensions:
+
+# even = [i for i in range(1,100) if i%2==0]
+# odd = [i for i in range(1,100) if i%3==0]
+#
+# print([(x,y) for x in even for y in odd if x%10==0 if y%10==0])
+
+# def minimumNumber(n, password):
+#     # Return the minimum number of characters to make the password strong
+#     numbers = "0123456789"
+#     lower_case = "abcdefghijklmnopqrstuvwxyz"
+#     upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+#     special = "!@#$%^&*()-+"
+#     d={}
+#     d['n'], d['l'], d['u'], d['s'] = 0,0,0,0
+#     count = 0
+#
+#     if len(password)>=6:
+#         for i in password:
+#             if i in numbers:
+#                 d['n']+=1
+#             if i in lower_case:
+#                 d['l']+=1
+#             if i in upper_case:
+#                 d['u']+=1
+#             if i in special:
+#                 d['s']+=1
+#
+#         for k,v in d.items():
+#             print(d[k])
+#             if d[k]==0:
+#                 count+=1
+#         return count
+#     else:
+#         for i in password:
+#             if i in numbers:
+#                 d['n']+=1
+#             if i in lower_case:
+#                 d['l']+=1
+#             if i in upper_case:
+#                 d['u']+=1
+#             if i in special:
+#                 d['s']+=1
+#         for k,v in d.items():
+#             if d[k]==0:
+#                 count+=1
+#         l = len(password)
+#         needed = 6-l
+#         if needed>=count:
+#             return needed
+#         else:
+#             return count
+#
+# print(minimumNumber(6, '4b*A'))
 
 
+# def alternate(s):
+#     filtered=list(set(s))
+#     l=len(s)
+#     flist=list(set(s))
+#     large_count = 0
+#     for i in s:
+#         for j in s:
+#             current = ''
+#             alt = s
+#
+#             if i != j:
+#                 current += i
+#                 current += j
+#                 for z in flist:
+#                     if z not in current:
+#                         alt=alt.replace(z,'')
+#
+#
+#                 if len(alt)>1:
+#                     # print(alt)
+#                     p=0
+#                     count=0
+#                     while p!=len(alt)-1:
+#                         if alt[p]!=alt[p+1]:
+#                             count+=1
+#                             if count>=large_count:
+#                                 large_count=count+1
+#                                 # print(large_count)
+#                         else:
+#                             count=0
+#                         p+=1
+#
+#     return large_count
+#
+#
+# print(alternate('asvkugfiugsalddlasguifgukvsa'))
+
+# def hurdleRace(k, height):
+#     n=len(height)
+#     max=0
+#     for i in height:
+#         if i>max:
+#             max=i
+#     diff = max-k
+#     if diff>0:
+#         return diff
+#     else:
+#         return 0
+#
+# print(hurdleRace(4, [1,6, 3, 5, 2]))
+
+
+# def saveThePrisoner(n, m, s):
+#     if (m%n)+(s-1)%n==0:
+#         return n
+#     else:
+#         return ((m%n)+(s-1)%n)
+#
+# print(saveThePrisoner(7, 7, 1))
+
+
+# n = 5
+# s=''
+# while n/2!=0:
+#     s+=str(n%2)
+#     n=int(n/2)
+#
+# count=0
+# max=0
+#
+# for i in s:
+#     if i=='1':
+#         count+=1
+#         if count > max:
+#             max=count
+#     else:
+#         count = 0
+# print(max)
+
+# a=[[1,1,1,0,0,0],[0,1,0,0,0,0],[1,1,1,0,0,0],[0,0,0,2,2,2],[0,0,0,0,2,0],[0,0,0,2,2,2]]
+#
+# x,sum,max=0,0,float('-inf')
+#
+# while x<4:
+#     for i in range(len(a[x])-2):
+#         sum = a[x][i] + a[x][i+1] + a[x][i+2] + a[x+1][i+1] + a[x+2][i] + a[x+2][i+1] +a[x+2][i+2]
+#         if sum>max:
+#             max=sum
+#
+#     x+=1
+# print(max)
+
+# def circularArrayRotation(a, k, queries):
+#     mod_k = k%len(a)
+#     # print(mod_k)
+#     rotation = 0
+#     while rotation!=mod_k:
+#         # print(1)
+#         temp=0
+#         for i in range(len(a)):
+#             if i==len(a)-1:
+#                 a[i],a[0]=temp,a[i]
+#                 # print(a,temp)
+#             else:
+#                 a[i],temp = temp,a[i]
+#                 # print(a,temp)
+#         rotation+=1
+#     res=[]
+#     for i in queries:
+#         res.append(a[i])
+#     return res
+
+# append and delete:
+
+# l = list('abcd')
+# res=l.pop(2)
+#
+# print(l[2])
+
+# s='aba'
+# t='aba'
+# k=7
+#
+# def appendAndDelete(s, t, k):
+#     if len(t)>len(s):
+#         n=len(s)
+#     else:
+#         n=len(t)
+#
+#     for i in range(n):
+#         if s[i]!=t[i]:
+#             ptr=i
+#             break
+#         else:
+#             ptr = i+1
+#
+#     unmatched = s[ptr:]
+#     # print(unmatched)
+#     del_count = len(unmatched)
+#     to_add = t[ptr:]
+#     add_count = len(to_add)
+#
+#     total_count = del_count+add_count
+#     # print(add_count)
+#     # print(del_count)
+#     # print(total_count)
+#     if s==t:
+#
+#     if total_count == k:
+#         return 'Yes'
+#     else:
+#         return 'No'
+
+
+# print(appendAndDelete(s, t, k))
+
+# def libraryFine(d1, m1, y1, d2, m2, y2):
+#     if y1>y2:
+#         late=y1-y2
+#         return late*10000
+#     elif(y1==y2):
+#         if m1>m2:
+#             late=m1-m2
+#             return late*500
+#         elif (m1==m2):
+#             if d1>d2:
+#                 late=d1-d2
+#                 return (late*15)
+#             else:
+#                 return 0
+#         else:
+#             return 0
+#     else:
+#         return 0
+#
+# print(libraryFine(2, 7, 1014, 1, 1, 1015))
+
+# def cutTheSticks(arr):
+#     l=[]
+#     while len(arr)!=0:
+#         minn = min(arr)
+#         l.append(len(arr))
+#         for i in range(len(arr)):
+#             arr[i]=arr[i]-minn
+#
+#         while 0 in arr:
+#             arr.remove(0)
+#     return l
+#
+# arr=[5, 4, 4, 2, 2, 8]
+# print(cutTheSticks(arr))
+
+# def solution(N):
+#     count = 0
+#     n=2
+#
+#     while 2*N +n-n**2>0:
+#         a=(2*N+n-n**2)/(2*n)
+#         if a - int(a) == 0:
+#             print(a,n)
+#             count+=1
+#         n+=1
+#
+#     return count
+#
+# print(solution(6))
+
+# def vowelReverse(string):
+#     string =list(string)
+#     strings=''
+#     vowels = 'aeiou'
+#     v_list = []
+#     for i in string:
+#         if i in vowels:
+#             v_list.insert(0,i)
+#
+#     for i in range(len(string)):
+#         if string[i] in vowels:
+#             string[i]=v_list.pop(0)
+#
+#     for i in string:
+#         strings+=i
+#     return strings
+#
+# s='apple'
+# print(vowelReverse(s))
+
+# def flatlandSpaceStations(n, c):
+#     c=sorted(c)
+#     if len(c)==n:
+#         return 0
+#     else:
+#         res=[]
+#         for i in range(n):
+#             dist=[]
+#             for j in c:
+#                 dist.append(abs(i-j))
+#             res.append(min(dist))
+#
+#         return max(res)
+
+# def hackerrankInString(s):
+#     word='hackerrank'
+#     l=len(s)
+#     j,checked=0,0
+#     for i in word:
+#         while j<l:
+#             if i==s[j]:
+#                 j+=1
+#                 checked+=1
+#                 break
+#             j+=1
+#
+#     return 'YES' if checked == len(word) else 'NO'
+#
+# print(hackerrankInString('hereiamstackerrank'))
+
+# def weightedUniformStrings(s, queries):
+#     letters = 'abcdefghijklmnopqrstuvwxyz'
+#     dict={}
+#     j=0
+#     s_dict = {}
+#     for i in letters:
+#         j+=1
+#         dict[i]=j
+#
+#     for i in range(len(s)):
+#         if s[i] not in s_dict:
+#             j=i+1
+#             counter=1
+#             if j<len(s)-1:
+#                 while s[i]==s[j]:
+#                     counter+=1
+#                     j=j+1
+#                     if j>len(s)-1:
+#                         break
+#             for z in range(1,counter+1):
+#                 s_dict[s[i]*z]=dict[s[i]]*z
+#
+#     for i in queries:
+#         if i in s_dict.values():
+#             print('Yes')
+#         else:
+#             print('No')
+#
+# weightedUniformStrings('aaabbbbcccddd', [9,7,8,12,5])
+
+def weightedUniformStrings(s, queries):
+    dict={}
+
+    f=set(s)
+    for i in f:
+        dict[i]=0
+    i=0
+    j=i+1
+    try:
+        while i<len(s)-1:
+            if s[i]==s[j]:
+                j+=1
+            else:
+                if (j-i)>dict[s[i]]:
+                    dict[s[i]]=j-i
+                i=j
+                j=i+1
+            if j==len(s)-1:
+                if s[j]==s[i]:
+                    dict[s[i]]=j+1-i
+                else:
+                    if dict[s[j]]==0:
+                        dict[s[j]]=1
+    except(IndexError):
+        pass
+
+    for k,v in dict.items():
+        print(f'{k}:{v}')
+
+weightedUniformStrings('aaabbbbcccdddaa', [9,7,8,12,5])
 # Done
