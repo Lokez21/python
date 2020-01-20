@@ -2711,34 +2711,114 @@ What is the smallest positive number that is evenly divisible by all of the numb
 #
 # weightedUniformStrings('aaabbbbcccddd', [9,7,8,12,5])
 
-def weightedUniformStrings(s, queries):
-    dict={}
-
-    f=set(s)
-    for i in f:
-        dict[i]=0
-    i=0
-    j=i+1
-    try:
-        while i<len(s)-1:
-            if s[i]==s[j]:
-                j+=1
-            else:
-                if (j-i)>dict[s[i]]:
-                    dict[s[i]]=j-i
-                i=j
-                j=i+1
-            if j==len(s)-1:
-                if s[j]==s[i]:
-                    dict[s[i]]=j+1-i
-                else:
-                    if dict[s[j]]==0:
-                        dict[s[j]]=1
-    except(IndexError):
-        pass
-
-    for k,v in dict.items():
-        print(f'{k}:{v}')
-
-weightedUniformStrings('aaabbbbcccdddaa', [9,7,8,12,5])
+# def weightedUniformStrings(s, queries):
+#     dict={}
+#
+#     f=set(s)
+#     for i in f:
+#         dict[i]=0
+#     i=0
+#     j=i+1
+#     try:
+#         while i<len(s)-1:
+#             if s[i]==s[j]:
+#                 j+=1
+#             else:
+#                 if (j-i)>dict[s[i]]:
+#                     dict[s[i]]=j-i
+#                 i=j
+#                 j=i+1
+#             if j==len(s)-1:
+#                 if s[j]==s[i]:
+#                     dict[s[i]]=j+1-i
+#                 else:
+#                     if dict[s[j]]==0:
+#                         dict[s[j]]=1
+#     except(IndexError):
+#         pass
+#
+#     for k,v in dict.items():
+#         print(f'{k}:{v}')
+#
+# weightedUniformStrings('aaabbbbcccdddaa', [9,7,8,12,5])
 # Done
+
+# class C:
+#     dangerous = 2
+#
+# c1 = C()
+# c2 = C()
+# print(c1.dangerous)
+#
+# c1.dangerous = 3
+# print (c1.dangerous)
+# print (c2.dangerous)
+#
+# del(c1.dangerous)
+# print (c1.dangerous)
+
+# a= 'stasd'
+# a=2
+# print(a)
+
+
+
+
+
+# a=2
+# def add():
+# b=3
+# c=a+b
+# print(c)
+# add()
+
+# def is_palindrome(x):
+#     x=str(x)
+#     return 1 if x==x[::-1] else 0
+#
+# x = -121
+# print(is_palindrome(x))
+
+
+# dict = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+# def romanToInt(s):
+#     sum = 0
+#     for i in range(len(s)):
+#         if i!=len(s)-1:
+#             if dict[s[i]]<dict[s[i+1]]:
+#                 sum-=dict[s[i]]
+#             else:
+#                 sum+=dict[s[i]]
+#
+#         else:
+#             sum+=dict[s[i]]
+#
+#         # print(sum)
+#
+#     return sum
+#
+#
+# print(romanToInt('MMMCMXCIX'))
+
+def validParanthesis(s):
+    dict = {'{':'}', '[':']', '(':')'}
+    open='{[('
+    opened = []
+    if len(s)>0:
+        for i in s:
+            if i in open:
+                opened += i
+            else:
+                if len(opened)>0 and i==dict[opened[-1]]:
+                    opened.pop()
+                else:
+                    return False
+
+    else:
+        return True
+    if len(opened)==0:
+        return True
+    else:
+        return False
+
+print(validParanthesis('['))
